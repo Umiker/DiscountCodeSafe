@@ -12,12 +12,12 @@ import java.beans.Transient;
 @RestController
 @RequestMapping("/Login/User")
 public class UserController {
+// getter setter register User
 
     @GetMapping
     public String getMessage() {
         return "User Login";
     }
-// getter setter register User
 public String getUsername() {
     return username;
 }

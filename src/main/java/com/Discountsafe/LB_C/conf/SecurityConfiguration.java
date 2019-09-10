@@ -37,6 +37,5 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
                 .authorities("ROLE_USER");
     }
 
-        return source;
-    }
+
 }

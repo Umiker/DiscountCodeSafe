@@ -17,7 +17,7 @@ public class AuthorizationFilter {
 
 }
     public AuthorizationFilter {
-    }
+// authorization
 
     @Override
     protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response,
@@ -31,7 +31,7 @@ public class AuthorizationFilter {
         SecurityContextHolder.getContext().setAuthentication(authentication);
         filterChain.doFilter(request, response);
     }
-
+//request the tokken
     private UsernamePasswordAuthenticationToken getAuthentication(HttpServletRequest request) {
         var token = request.getHeader(SecurityConstants.TOKEN_HEADER);
         if (!StringUtils.isEmpty(token) && token.startsWith(SecurityConstants.TOKEN_PREFIX)) {
@@ -50,7 +50,7 @@ public class AuthorizationFilter {
                         .get("rol")).stream()
                         .map(authority -> new SimpleGrantedAuthority((String) authority))
                         .collect(Collectors.toList());
-
+//if condition to denie request
                 if (!StringUtils.isEmpty(username)) {
                     return new UsernamePasswordAuthenticationToken(username, null, authorities);
                 }
@@ -68,3 +68,4 @@ public class AuthorizationFilter {
         return null;
     }
 }
+        }
