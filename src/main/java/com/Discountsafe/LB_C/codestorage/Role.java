@@ -4,11 +4,14 @@ public class Role {
 
     public int id;
 
-       @column (name"rolename" )
+    // Rolde commands for the Databank
+
+    @column (name"rolename" )
     private string role;
 
     @column (name"roledescription" )
     private string description;
+
 
     public int getId() {
         return id;
